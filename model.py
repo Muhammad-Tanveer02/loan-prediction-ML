@@ -1,9 +1,9 @@
 import pandas as pd
+import pickle
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score
 from sklearn.tree import DecisionTreeClassifier
 
-# import data an dremove ID column
+# import data and remove ID column
 df = pd.read_csv('loan_prediction_dataset.csv')
 df.drop('Loan_ID', axis=1, inplace=True)
 
@@ -53,4 +53,5 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
 model = DecisionTreeClassifier()
 model.fit(X_train, y_train)
 
-y_pred = model.predict(X_test)
+# Save model to pkl
+pickle.dump(model, open("model.pkl", "wb"))
