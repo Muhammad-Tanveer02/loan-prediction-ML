@@ -13,14 +13,14 @@ def home():
 
 @app.route("/predict", methods=["POST"])
 def predict():
-    
+
     int_values = np.array([int(x) for x in request.form.values()])
     final_values = [np.array(int_values)]
     prediction = model.predict(final_values)
 
     if prediction == 1:
         output = "You are eligible for a Loan"
-        text_hex = "#7B940E"
+        text_hex = "#008000"
     elif prediction == 0:
         output = "You are NOT eligible for a Loan"
         text_hex = "#AF0000"

@@ -7,9 +7,17 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
         integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <style>
-        html,
+        html {
+            display: table;
+            margin: auto;
+        }
+
         body {
-            min-height: 100%;
+            height: 100%;
+            display: table-cell;
+            vertical-align: middle;
+            padding: 10px;
+            background-color: #C0C0C0;
         }
 
         body,
@@ -25,7 +33,7 @@
             outline: none;
             font-family: Roboto, Arial, sans-serif;
             font-size: 14px;
-            color: #666;
+            color: rgb(0, 0, 0);
             line-height: 22px;
         }
 
@@ -33,7 +41,7 @@
             position: absolute;
             margin: 0;
             font-size: 40px;
-            color: #fff;
+            color: rgb(0, 0, 0);
             z-index: 2;
             line-height: 83px;
         }
@@ -54,6 +62,8 @@
         form {
             width: 100%;
             padding: 20px;
+            margin: 10px;
+            padding-bottom: 20px;
             border-radius: 6px;
             background: #fff;
             box-shadow: 0 0 8px #006622;
@@ -61,27 +71,14 @@
 
         .banner {
             position: relative;
-            height: 300px;
-            background-image: url("/uploads/media/default/0001/02/e2502bb5e1dab7d5cc9b011c745033821aad632c.jpeg");
-            background-size: cover;
+            height: 180px;
+            width: 109%;
+            background-color: #3CB371;
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
-        }
-
-        .banner::after {
-            content: "";
-            background-color: rgba(0, 0, 0, 0.2);
-            position: absolute;
-            width: 100%;
-            height: 100%;
-        }
-
-        .banner_after {
-            justify-content: center;
-            align-items: center;
-            text-align: center;
+            margin: 10px;
         }
 
         input,
@@ -279,11 +276,8 @@
     <div class="banner">
         <h1>Loan Predicition Calculator</h1>
     </div>
-    <div class="banner_after">
-        <h2>Predictions are Made using Decision Tree Classifiers</h2>
-    </div>
     <br />
-    <h3 style="text-align: center;">
+    <h3 style="text-align: center; font-size: 30px; margin-left: 5.5%;">
         <span style="color: {{col_code}}">
             {{ loan_status_result }}
         </span>
@@ -363,7 +357,6 @@
             Predict Elgibility
         </button>
     </form>
-    </section>
 </body>
 
 </html>
