@@ -18,7 +18,7 @@
             display: table-cell;
             vertical-align: middle;
             padding: 10px;
-            background-color: #C0C0C0;
+            background-color: cornsilk;
         }
 
         body,
@@ -61,20 +61,22 @@
         }
 
         form {
+            border-radius: 25px;
             width: 100%;
             padding: 20px;
             margin: 10px;
             padding-bottom: 20px;
             border-radius: 6px;
             background: #fff;
-            box-shadow: 0 0 8px #006622;
+            box-shadow: 0 0 8px mediumaquamarine;
         }
 
         .banner {
             position: relative;
             height: 180px;
             width: 109%;
-            background-color: #3CB371;
+            border-radius: 25px;
+            background-color: mediumaquamarine;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -237,7 +239,7 @@
             padding: 10px;
             border: none;
             border-radius: 5px;
-            background: #006622;
+            background: mediumaquamarine;
             font-size: 16px;
             color: #fff;
             cursor: pointer;
@@ -285,78 +287,80 @@
     </h3>
     <br />
     <form action="{{ url_for('predict')}}" method="post" class="form">
-        <legend>Please Enter Your Information Here</legend>
-        <div class="item">
-            <label for="gender">Gender:</label>
-            <select name="gender_ddn" id="gender">
-                <option value="1">Male</option>
-                <option value="0">Female</option>
-            </select>
-        </div>
-        <div class="item">
-            <label for="married">Marital Status:</label>
-            <select name="married_ddn" id="married">
-                <option value="1">Married</option>
-                <option value="0">Not Married</option>
-            </select>
-        </div>
-        <div class="item">
-            <label for="dependents">Number of Dependents:</label>
-            <select name="dependents_ddn" id="dependents">
-                <option value="0">Zero (0)</option>
-                <option value="1">One (1)</option>
-                <option value="2">Two (2)</option>
-                <option value="3">At least three (3+)</option>
-            </select>
-        </div>
-        <div class="item">
-            <label for="education">Status of Education:</label>
-            <select name="education_ddn" id="education">
-                <option value="1">Graduate</option>
-                <option value="0">Not a Graduate</option>
-            </select>
-        </div>
-        <div class="item">
-            <label for="self_employ">Are You Self-Emplyed:</label>
-            <select name="self_employ_ddn" id="self_employ">
-                <option value="1">Yes</option>
-                <option value="0">No</option>
-            </select>
-        </div>
-        <div class="item">
-            <label for="applicant_income">Applicant Income:</label>
-            <input type="text" id="applicant_income" name="applicant_income_ddn" value="0">
-        </div>
-        <div style="item">
-            <label for="coapplicant_income">Co Applicant Income:</label>
-            <input type="text" id="coapplicant_income" name="coapplicant_income_ddn" value="0">
-        </div>
-        <div style="item">
-            <label for="loan_amount">Loan Amount (in thousands of $):</label>
-            <input type="text" id="loan_amount" name="loan_amount_ddn" value="0">
-        </div>
-        <div style="item">
-            <label for="loan_term">Loan Term (in months):</label>
-            <input type="text" id="loan_term" name="loan_term_ddn" value="0">
-        </div>
-        <div class="item">
-            <label for="credit_history">Does Your Credit History Meet the Guidlines:</label>
-            <select name="credit_history_ddn" id="credit_history">
-                <option value="1">Yes</option>
-                <option value="0">No</option>
-            </select>
-        </div>
-        <div class="item">
-            <label for="property_area">Type of Property Areas:</label>
-            <select name="property_area_ddn" id="property_area">
-                <option value="1">Urban</option>
-                <option value="2">Semi Urban</option>
-                <option value="3">Rural</option>
-            </select>
-        </div>
-        <button type="submit" class="btn" style="">
-            Predict Elgibility
-        </button>
+        <fieldset>
+            <legend>Please Enter Your Information Here</legend>
+            <div class="item">
+                <label for="gender">Gender:</label>
+                <select name="gender_ddn" id="gender">
+                    <option value="1">Male</option>
+                    <option value="0">Female</option>
+                </select>
+            </div>
+            <div class="item">
+                <label for="married">Marital Status:</label>
+                <select name="married_ddn" id="married">
+                    <option value="1">Married</option>
+                    <option value="0">Not Married</option>
+                </select>
+            </div>
+            <div class="item">
+                <label for="dependents">Number of Dependents:</label>
+                <select name="dependents_ddn" id="dependents">
+                    <option value="0">Zero (0)</option>
+                    <option value="1">One (1)</option>
+                    <option value="2">Two (2)</option>
+                    <option value="3">At least three (3+)</option>
+                </select>
+            </div>
+            <div class="item">
+                <label for="education">Status of Education:</label>
+                <select name="education_ddn" id="education">
+                    <option value="1">Graduate</option>
+                    <option value="0">Not a Graduate</option>
+                </select>
+            </div>
+            <div class="item">
+                <label for="self_employ">Are You Self-Emplyed:</label>
+                <select name="self_employ_ddn" id="self_employ">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+            <div class="item">
+                <label for="applicant_income">Applicant Income:</label>
+                <input type="text" id="applicant_income" name="applicant_income_ddn" value="0">
+            </div>
+            <div style="item">
+                <label for="coapplicant_income">Co Applicant Income:</label>
+                <input type="text" id="coapplicant_income" name="coapplicant_income_ddn" value="0">
+            </div>
+            <div style="item">
+                <label for="loan_amount">Loan Amount (in thousands of $):</label>
+                <input type="text" id="loan_amount" name="loan_amount_ddn" value="0">
+            </div>
+            <div style="item">
+                <label for="loan_term">Loan Term (in months):</label>
+                <input type="text" id="loan_term" name="loan_term_ddn" value="0">
+            </div>
+            <div class="item">
+                <label for="credit_history">Does Your Credit History Meet the Guidlines:</label>
+                <select name="credit_history_ddn" id="credit_history">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+            <div class="item">
+                <label for="property_area">Type of Property Areas:</label>
+                <select name="property_area_ddn" id="property_area">
+                    <option value="1">Urban</option>
+                    <option value="2">Semi Urban</option>
+                    <option value="3">Rural</option>
+                </select>
+            </div>
+            <button type="submit" class="btn" style="">
+                Predict Elgibility
+            </button>
+        </fieldset>
     </form>
 </body>
 
